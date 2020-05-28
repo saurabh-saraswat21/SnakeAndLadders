@@ -18,4 +18,9 @@ public class Snake {
     public Number getTail() {
         return tail;
     }
+    public Player biteSnake(Player p1)
+    {
+        p1.setCurrentPosition(this.getTail());
+        return p1;
+    }
 }
