@@ -1,22 +1,22 @@
 package GameElements;
 
 public class Ladder {
-    private Number Head ;
-    private Number Tail;
+    private Number head;
+    private Number tail;
     public void setHead(Number head) {
-        Head = head;
+        this.head = head;
     }
 
     public void setTail(Number tail) {
-        Tail = tail;
+        this.tail = tail;
     }
 
     public Number getHead() {
-        return Head;
+        return head;
     }
 
     public Number getTail() {
-        return Tail;
+        return tail;
     }
     public Player riseLadder(Player p1)
     {
