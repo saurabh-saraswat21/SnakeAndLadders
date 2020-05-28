@@ -18,5 +18,10 @@ public class Ladder {
     public Number getTail() {
         return Tail;
     }
+    public Player riseLadder(Player p1)
+    {
+        p1.setCurrentPosition(this.getHead());
+        return p1;
+    }
 
 }
