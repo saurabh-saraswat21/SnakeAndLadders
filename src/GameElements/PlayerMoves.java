@@ -6,5 +6,9 @@ public class PlayerMoves {
         player.setCurrentPosition(n1);
     }
 
+    private boolean checkSnake(Player p1) {
+        return p1.getCurrentPosition().isSnake();
+    }
+
 
 }
