@@ -38,7 +38,6 @@ public class Board {
                 }
             }
         }
-
     }
 
     private static void loadLadders() {
@@ -53,6 +52,25 @@ public class Board {
                     board.get(i).setLadder(new Ladder(head, tail));
                 }
             }
+        }
+    }
+
+    private static void displaySnakesAndLadder() {
+        int j = 0;
+        int k = 0;
+        for (int i = 0; i < 100; i++) {
+
+            if (board.get(i).isSnake()) {
+                j++;
+                System.out.println("Snake " + j);
+                System.out.println(board.get(i).getSnake().getHead() + " " + board.get(i).getSnake().getTail());
+            }
+            if (board.get(i).isLadder()) {
+                k++;
+                System.out.println("Ladder " + k);
+                System.out.println(board.get(i).getLadder().getHead() + " " + board.get(i).getLadder().getTail());
+            }
+
         }
     }
 
