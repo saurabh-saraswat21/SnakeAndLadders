@@ -57,4 +57,9 @@ public class Number {
     public int compare(int integer, Number number) {
         return Integer.compare(number.getValue(), integer);
     }
+
+    public Number(int value) {
+        this.value = value;
+    }
+
 }
