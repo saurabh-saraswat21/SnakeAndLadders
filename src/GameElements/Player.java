@@ -5,6 +5,12 @@ public class Player {
     private boolean isLock;
     private String name;
 
+    public Player(Number currentPosition, boolean isLock, String name) {
+        this.currentPosition = currentPosition;
+        this.isLock = isLock;
+        this.name = name;
+    }
+
     public boolean isLock() {
         return isLock;
     }
