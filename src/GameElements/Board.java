@@ -31,4 +31,22 @@ public class Board {
 
     }
 
+    private static void loadLadders() {
+        int[][] LadderArr = {{3, 25}, {7, 50}, {27, 45}, {38, 59}, {43, 79}, {51, 67}, {63, 86}, {68, 92}, {70, 91}, {83, 97}};
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 10; j++) {
+                if (board.get(i).compare(LadderArr[j][0], board.get(i)) == 0) {
+                    board.get(i).setSnake(false);
+                    board.get(i).setLadder(true);
+                    Number head = board.get(LadderArr[j][0]);
+                    Number tail = board.get(LadderArr[j][1]);
+                    board.get(i).setLadder(new Ladder(head, tail));
+                }
+            }
+        }
+    }
+
+
 }
+
+
