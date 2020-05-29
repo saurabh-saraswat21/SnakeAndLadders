@@ -1,4 +1,5 @@
 package GameElements;
+
 public class Number {
     private int value;
     private boolean isLadder;
@@ -51,5 +52,9 @@ public class Number {
 
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public int compare(int integer, Number number) {
+        return Integer.compare(number.getValue(), integer);
     }
 }
