@@ -1,8 +1,14 @@
 package GameElements;
 
 public class Snake {
-    private Number head ;
+    private Number head;
     private Number tail;
+
+    public Snake(Number head, Number tail) {
+        this.head = head;
+        this.tail = tail;
+    }
+
     public void setHead(Number head) {
         this.head = head;
     }
