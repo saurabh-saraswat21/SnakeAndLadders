@@ -13,13 +13,14 @@ public class Board {
         }
     }
 
-    private static void LoadSnakes() {
+    private static void loadSnakes() {
         int[][] snakeArr = {{10, 8}, {35, 13}, {56, 18}, {42, 21}, {65, 46}, {93, 47}, {89, 48}, {95, 64}, {98, 77}, {80, 62}};
         for (int i = 0; i < 100; i++) {
             for (int j = 0; j < 10; j++) {
                 if (board.get(i).compare(snakeArr[j][0], board.get(i)) == 0) {
 
                     board.get(i).setSnake(true);
+                    board.get(i).setLadder(false);
                     Number head = board.get(snakeArr[j][0]);
                     Number tail = board.get(snakeArr[j][1]);
                     board.get(i).setSnake(new Snake(head, tail));
