@@ -6,6 +6,12 @@ public class Number {
     private Ladder ladder;
     private Snake snake;
 
+    public Number(int value, boolean isLadder, boolean isSnake) {
+        this.value = value;
+        this.isLadder = isLadder;
+        this.isSnake = isSnake;
+    }
+
     public Ladder getLadder() {
         return ladder;
     }
