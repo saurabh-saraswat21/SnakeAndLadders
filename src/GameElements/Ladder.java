@@ -15,11 +15,16 @@ public class Ladder {
         return head;
     }
 
+    public Ladder(Number head, Number tail) {
+        this.head = head;
+        this.tail = tail;
+    }
+
     public Number getTail() {
         return tail;
     }
-    public Player riseLadder(Player p1)
-    {
+
+    public Player riseLadder(Player p1) {
         p1.setCurrentPosition(this.getHead());
         return p1;
     }
