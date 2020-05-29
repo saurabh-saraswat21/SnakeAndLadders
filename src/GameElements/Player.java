@@ -3,6 +3,7 @@ package GameElements;
 public class Player {
     private Number currentPosition;
     private boolean isLock;
+    private String name;
 
     public boolean isLock() {
         return isLock;
