@@ -17,6 +17,12 @@ public class Board {
         }
     }
 
+    public static void loadGameBoard() {
+        Board.loadBoard();
+        Board.loadSnakes();
+        Board.loadLadders();
+    }
+
     private static void loadSnakes() {
         int[][] snakeArr = {{10, 8}, {35, 13}, {56, 18}, {42, 21}, {65, 46}, {93, 47}, {89, 48}, {95, 64}, {98, 77}, {80, 62}};
         for (int i = 0; i < 100; i++) {
