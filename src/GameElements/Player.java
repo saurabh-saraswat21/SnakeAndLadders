@@ -1,6 +1,6 @@
 package GameElements;
 
-public class Player {
+public class Player extends PlayerMoves {
     private Number currentPosition;
     private boolean isLock;
     private String name;
