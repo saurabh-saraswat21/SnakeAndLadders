@@ -1,6 +1,18 @@
 package GameElements;
 
 public class PlayerMoves {
+    public int move(Player p1, int number) {
+        int response = 0;
+        this.justMove(p1, number);
+        boolean ladder = this.checkLadder(p1);
+        if (!ladder) {
+            if (this.checkSnake(p1))
+                response = -1;
+        } else
+            response = 1;
+        return response;
+    }
+
     private void justMove(Player player, int number) {
         Number n1 = Board.getBoard().get(number - 1);
         player.setCurrentPosition(n1);
