@@ -10,5 +10,9 @@ public class PlayerMoves {
         return p1.getCurrentPosition().isSnake();
     }
 
+    private boolean checkLadder(Player p1) {
+        return p1.getCurrentPosition().isLadder();
+    }
+
 
 }
