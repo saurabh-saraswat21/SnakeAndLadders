@@ -1,6 +1,10 @@
 package GameElements;
 
 public class PlayerMoves {
+    public boolean checkWin(Player p1) {
+        return p1.getCurrentPosition().getValue() == 100;
+    }
+
     public int move(Player p1, int number) {
         int response = 0;
         this.justMove(p1, number);
