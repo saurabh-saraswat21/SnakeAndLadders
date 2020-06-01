@@ -9,14 +9,6 @@ public class Board {
         return board;
     }
 
-    private static void loadBoard() {
-
-        for (int i = 1; i <= 100; i++) {
-            board.add(new Number(i, false, false));
-
-        }
-    }
-
     public static void loadGameBoard() {
         Board.loadBoard();
         Board.loadSnakes();
@@ -52,6 +44,14 @@ public class Board {
                     board.get(i).setLadder(new Ladder(head, tail));
                 }
             }
+        }
+    }
+
+    private static void loadBoard() {
+
+        for (int i = 1; i <= 100; i++) {
+            board.add(new Number(i, false, false));
+
         }
     }
 
