@@ -9,6 +9,16 @@ import java.util.Scanner;
 
 public class SnakeAndLadders {
     private static Dice dice;
+
+    private static void oneRound(ArrayList<Player> players) {
+
+        for (Player p1 : players) {
+            int number = dice.rollDice();
+            Player.move(p1, number);
+        }
+
+    }
+
     private static ArrayList<Player> getPlayers() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter The Number Of Players:-");
