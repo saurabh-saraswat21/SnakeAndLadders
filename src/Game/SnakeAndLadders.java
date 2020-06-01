@@ -21,6 +21,14 @@ public class SnakeAndLadders {
 
     }
 
+    private Player getWinner(ArrayList<Player> players) {
+        for (Player p1 : players) {
+            if (Player.checkWin(p1))
+                return p1;
+        }
+        return null;
+    }
+
     private static ArrayList<Player> getPlayers() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter The Number Of Players:-");
