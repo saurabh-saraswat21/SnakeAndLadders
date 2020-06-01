@@ -1,12 +1,14 @@
 package Game;
 
 import GameElements.Board;
+import GameElements.Dice;
 import GameElements.Player;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SnakeAndLadders {
+    private static Dice dice;
     private static ArrayList<Player> getPlayers() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter The Number Of Players:-");

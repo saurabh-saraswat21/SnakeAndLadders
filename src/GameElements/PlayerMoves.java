@@ -10,7 +10,7 @@ public class PlayerMoves {
         if (response == 1) {
             riseLadder(p1);
         } else if (response == -1) {
-            byteSnake(p1);
+            biteSnake(p1);
         }
     }
 
@@ -31,7 +31,7 @@ public class PlayerMoves {
         p1.setCurrentPosition(ladder.getHead());
     }
 
-    private static void byteSnake(Player p1) {
+    private static void biteSnake(Player p1) {
         Snake snake = p1.getCurrentPosition().getSnake();
         p1.setCurrentPosition(snake.getTail());
     }
