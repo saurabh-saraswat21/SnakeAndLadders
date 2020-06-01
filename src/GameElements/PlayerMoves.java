@@ -5,6 +5,15 @@ public class PlayerMoves {
         return p1.getCurrentPosition().getValue() == 100;
     }
 
+    public static void move(Player p1, int number) {
+        int response = moveAndCheck(p1, number);
+        if (response == 1) {
+            riseLadder(p1);
+        } else if (response == -1) {
+            byteSnake(p1);
+        }
+    }
+
     private static int moveAndCheck(Player p1, int number) {
         int response = 0;
         justMove(p1, number);
