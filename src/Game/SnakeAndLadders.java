@@ -10,13 +10,14 @@ import java.util.Scanner;
 public class SnakeAndLadders {
     private static Dice dice;
 
-    private static void oneRound(ArrayList<Player> players) {
+    private static boolean oneRound(ArrayList<Player> players) {
 
         for (Player p1 : players) {
             int number = dice.rollDice() + p1.getCurrentPosition().getValue();
             Player.move(p1, number);
-            if (Player.checkWin(p1)) return;
+            if (Player.checkWin(p1)) return false;
         }
+        return true;
 
     }
 
