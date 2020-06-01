@@ -15,6 +15,7 @@ public class SnakeAndLadders {
         for (Player p1 : players) {
             int number = dice.rollDice() + p1.getCurrentPosition().getValue();
             Player.move(p1, number);
+            if (Player.checkWin(p1)) return;
         }
 
     }
