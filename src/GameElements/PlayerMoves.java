@@ -17,6 +17,11 @@ public class PlayerMoves {
         return response;
     }
 
+    private void riseLadder(Player p1) {
+        Ladder ladder = p1.getCurrentPosition().getLadder();
+        p1.setCurrentPosition(ladder.getHead());
+    }
+
     private void byteSnake(Player p1) {
         Snake snake = p1.getCurrentPosition().getSnake();
         p1.setCurrentPosition(snake.getTail());
