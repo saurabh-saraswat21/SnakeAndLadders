@@ -5,7 +5,7 @@ public class PlayerMoves {
         return p1.getCurrentPosition().getValue() == 100;
     }
 
-    public int move(Player p1, int number) {
+    private int moveAndCheck(Player p1, int number) {
         int response = 0;
         this.justMove(p1, number);
         boolean ladder = this.checkLadder(p1);
