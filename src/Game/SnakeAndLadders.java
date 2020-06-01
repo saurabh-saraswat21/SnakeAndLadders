@@ -13,7 +13,7 @@ public class SnakeAndLadders {
     private static void oneRound(ArrayList<Player> players) {
 
         for (Player p1 : players) {
-            int number = dice.rollDice();
+            int number = dice.rollDice() + p1.getCurrentPosition().getValue();
             Player.move(p1, number);
         }
 
