@@ -37,8 +37,10 @@ public class PlayerMoves {
     }
 
     private static void justMove(Player player, int number) {
-        Number n1 = Board.getBoard().get(number - 1);
-        player.setCurrentPosition(n1);
+        if (number < 101) {
+            Number n1 = Board.getBoard().get(number - 1);
+            player.setCurrentPosition(n1);
+        }
     }
 
     private static boolean checkSnake(Player p1) {
