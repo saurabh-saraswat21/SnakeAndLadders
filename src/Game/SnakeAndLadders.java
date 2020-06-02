@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SnakeAndLadders {
-    private static Dice dice;
+    private static final Dice dice = new Dice();
 
     private static boolean oneRound(ArrayList<Player> players) {
         Scanner sc = new Scanner(System.in);
@@ -25,6 +25,11 @@ public class SnakeAndLadders {
         }
         return true;
 
+    }
+
+    public static void main(String[] args) {
+        SnakeAndLadders game = new SnakeAndLadders();
+        game.startGame();
     }
 
     private Player getWinner(ArrayList<Player> players) {
