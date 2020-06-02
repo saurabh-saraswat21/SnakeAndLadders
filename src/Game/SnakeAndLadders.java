@@ -11,11 +11,17 @@ public class SnakeAndLadders {
     private static Dice dice;
 
     private static boolean oneRound(ArrayList<Player> players) {
-
+        Scanner sc = new Scanner(System.in);
+        int response;
         for (Player p1 : players) {
-            int number = dice.rollDice() + p1.getCurrentPosition().getValue();
-            Player.move(p1, number);
-            if (Player.checkWin(p1)) return false;
+            System.out.println(p1.getName() + "'s Turn");
+            System.out.println("Press 1 to roll dice");
+            response = sc.nextInt();
+            if (response == 1) {
+                int number = dice.rollDice() + p1.getCurrentPosition().getValue();
+                Player.move(p1, number);
+                if (Player.checkWin(p1)) return false;
+            }
         }
         return true;
 
@@ -42,8 +48,21 @@ public class SnakeAndLadders {
             player = new Player(Board.getBoard().get(0), true, name);
             players.add(player);
         }
-        sc.close();
         return players;
+    }
+
+    public void startGame() {
+        Board.loadGameBoard();
+        ArrayList<Player> players = getPlayers();
+        while (true) {
+            boolean response = oneRound(players);
+            if (!response) {
+                Player winner = getWinner(players);
+                System.out.println(winner.getName() + "" + "WINS");
+                return;
+
+            }
+        }
     }
 
 }
