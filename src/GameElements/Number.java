@@ -60,7 +60,7 @@ public class Number {
 
     @Override
     public String toString() {
-        return String.valueOf(this.getValue()) + " ";
+        return this.getValue() + " ";
     }
 
 }
