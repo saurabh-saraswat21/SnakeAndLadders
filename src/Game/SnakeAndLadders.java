@@ -49,7 +49,7 @@ public class SnakeAndLadders {
         ArrayList<Player> players = new ArrayList<>();
         for (int i = 0; i < noOfPlayers; i++) {
             System.out.println("Enter" + (i + 1) + "Player Name");
-            name = sc.next();
+            name = Input.inputName();
             player = new Player(Board.getBoard().get(0), true, name);
             players.add(player);
         }
