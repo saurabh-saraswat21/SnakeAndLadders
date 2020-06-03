@@ -5,11 +5,15 @@ import java.util.Scanner;
 public class Input {
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static int inputInt() {
+    public static int takeOneDigitIntInput() {
         while (true) {
             String a = scanner.nextLine();
             try {
-                return Integer.parseInt(a);
+                int re = Integer.parseInt(a);
+                if (re < 10 && re > 0) {
+                    return Integer.parseInt(a);
+                } else
+                    System.out.println("Invalid input");
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input");
             }
@@ -43,10 +47,6 @@ public class Input {
             }
 
         }
-    }
-
-    public static void main(String[] args) {
-        inputNoOfPlayers();
     }
 
 }
