@@ -52,7 +52,6 @@ public class SnakeAndLadders {
     }
 
     private static ArrayList<Player> getPlayers() {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Enter The Number Of Players:-");
         int noOfPlayers = Input.inputNoOfPlayers();
         String name;
