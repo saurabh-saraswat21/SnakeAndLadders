@@ -16,6 +16,23 @@ public class Input {
         }
     }
 
+    public static int inputNoOfPlayers() {
+        while (true) {
+            String a = scanner.nextLine();
+            try {
+                int players = Integer.parseInt(a);
+                if (players <= 5 && players > 1)
+                    return players;
+                else if (players <= 1)
+                    System.out.println("please enter a value more than 1");
+                else
+                    System.out.println("No of players cannot be more than 5");
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input");
+            }
+        }
+    }
+
     public static String inputName() {
         while (true) {
             String name = scanner.nextLine();
@@ -26,7 +43,10 @@ public class Input {
             }
 
         }
+    }
 
+    public static void main(String[] args) {
+        inputNoOfPlayers();
     }
 
 }
