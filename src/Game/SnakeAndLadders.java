@@ -63,6 +63,7 @@ public class SnakeAndLadders {
             boolean response = oneRound(players);
             if (!response) {
                 Player winner = getWinner(players);
+                assert winner != null;
                 System.out.println(winner.getName() + "" + "WINS");
                 return;
 
