@@ -10,6 +10,22 @@ import java.util.Scanner;
 public class SnakeAndLadders {
     private static final Dice dice = new Dice();
 
+    public void startGame() {
+        Board.loadGameBoard();
+        ArrayList<Player> players = getPlayers();
+        while (true) {
+            boolean response = oneRound(players);
+            if (!response) {
+                Player winner = getWinner(players);
+                assert winner != null;
+                System.out.println(winner.getName() + "" + "WINS");
+                return;
+
+            }
+        }
+    }
+
+
     private static boolean oneRound(ArrayList<Player> players) {
         Scanner sc = new Scanner(System.in);
         int response;
@@ -25,11 +41,6 @@ public class SnakeAndLadders {
         }
         return true;
 
-    }
-
-    public static void main(String[] args) {
-        SnakeAndLadders game = new SnakeAndLadders();
-        game.startGame();
     }
 
     private Player getWinner(ArrayList<Player> players) {
@@ -54,21 +65,6 @@ public class SnakeAndLadders {
             players.add(player);
         }
         return players;
-    }
-
-    public void startGame() {
-        Board.loadGameBoard();
-        ArrayList<Player> players = getPlayers();
-        while (true) {
-            boolean response = oneRound(players);
-            if (!response) {
-                Player winner = getWinner(players);
-                assert winner != null;
-                System.out.println(winner.getName() + "" + "WINS");
-                return;
-
-            }
-        }
     }
 
 }
