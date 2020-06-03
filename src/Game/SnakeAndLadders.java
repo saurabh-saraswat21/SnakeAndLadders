@@ -32,7 +32,7 @@ public class SnakeAndLadders {
         for (Player p1 : players) {
             System.out.println(p1.getName() + "'s Turn");
             System.out.println("Press 1 to roll dice");
-            response = Input.inputInt();
+            response = Input.takeOneDigitIntInput();
             if (response == 1) {
                 int number = dice.rollDice() + p1.getCurrentPosition().getValue();
                 Player.move(p1, number);
@@ -49,6 +49,14 @@ public class SnakeAndLadders {
                 return p1;
         }
         return null;
+    }
+
+    public static int displayMenu() {
+        System.out.println("Welcome to Snake And Ladders");
+        System.out.println("Press 1 to start game ");
+        System.out.println("Press 2 for info");
+        System.out.println("Press 0 to exit");
+        return Input.takeOneDigitIntInput();
     }
 
     private static ArrayList<Player> getPlayers() {
