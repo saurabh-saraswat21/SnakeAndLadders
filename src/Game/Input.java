@@ -15,4 +15,18 @@ public class Input {
             }
         }
     }
+
+    public static String inputName() {
+        while (true) {
+            String name = scanner.nextLine();
+            if (name.trim().equals("")) {
+                System.out.println("Name cannot be empty");
+            } else {
+                return name;
+            }
+
+        }
+
+    }
+
 }
