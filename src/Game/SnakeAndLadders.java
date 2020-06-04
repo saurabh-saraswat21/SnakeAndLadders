@@ -42,8 +42,12 @@ public class SnakeAndLadders {
                 System.out.println("Press 1 to roll dice");
                 response = Input.takeOneDigitIntInput();
                 if (response == 1) {
-                    int number = dice.rollDice() + p1.getCurrentPosition().getValue();
+                    int diceResult = dice.rollDice();
+                    System.out.println("Number comes :- " + diceResult);
+                    int number = diceResult + p1.getCurrentPosition().getValue();
                     Player.move(p1, number);
+                    System.out.println(p1.getName() + "'s current position is " + p1.getCurrentPosition());
+                    System.out.println("\n\n\n");
                     ensureTurn = false;
                     if (Player.checkWin(p1)) return false;
                 }
