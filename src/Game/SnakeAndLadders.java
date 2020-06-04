@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class SnakeAndLadders {
     private static final Dice dice = new Dice();
 
-    public void startGame() {
+    public static void start() {
         Board.loadGameBoard();
         ArrayList<Player> players = getPlayers();
         while (true) {
@@ -43,7 +43,7 @@ public class SnakeAndLadders {
 
     }
 
-    private Player getWinner(ArrayList<Player> players) {
+    private static Player getWinner(ArrayList<Player> players) {
         for (Player p1 : players) {
             if (Player.checkWin(p1))
                 return p1;
