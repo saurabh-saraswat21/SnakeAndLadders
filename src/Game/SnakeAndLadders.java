@@ -9,7 +9,13 @@ import java.util.ArrayList;
 public class SnakeAndLadders {
     private static final Dice dice = new Dice();
 
-    public static void start() {
+    public static void startGame() {
+        int response = displayMenu();
+        responseAtMenu(response);
+    }
+
+
+    private static void start() {
         Board.loadGameBoard();
         ArrayList<Player> players = getPlayers();
         while (true) {
@@ -55,7 +61,7 @@ public class SnakeAndLadders {
         return null;
     }
 
-    public static int displayMenu() {
+    private static int displayMenu() {
         System.out.println("Welcome to Snake And Ladders");
         System.out.println("Press 1 to start game ");
         System.out.println("Press 2 for info");
@@ -63,7 +69,7 @@ public class SnakeAndLadders {
         return Input.takeOneDigitIntInput();
     }
 
-    public static void responseAtMenu(int number) {
+    private static void responseAtMenu(int number) {
         if (number == 1) {
             start();
         } else if (number == 2) {
