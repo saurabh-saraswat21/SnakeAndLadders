@@ -5,7 +5,6 @@ import GameElements.Dice;
 import GameElements.Player;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class SnakeAndLadders {
     private static final Dice dice = new Dice();
@@ -27,16 +26,21 @@ public class SnakeAndLadders {
 
 
     private static boolean oneRound(ArrayList<Player> players) {
-        Scanner sc = new Scanner(System.in);
+
         int response;
+
         for (Player p1 : players) {
-            System.out.println(p1.getName() + "'s Turn");
-            System.out.println("Press 1 to roll dice");
-            response = Input.takeOneDigitIntInput();
-            if (response == 1) {
-                int number = dice.rollDice() + p1.getCurrentPosition().getValue();
-                Player.move(p1, number);
-                if (Player.checkWin(p1)) return false;
+            boolean ensureTurn = true;
+            while (ensureTurn) {
+                System.out.println(p1.getName() + "'s Turn");
+                System.out.println("Press 1 to roll dice");
+                response = Input.takeOneDigitIntInput();
+                if (response == 1) {
+                    int number = dice.rollDice() + p1.getCurrentPosition().getValue();
+                    Player.move(p1, number);
+                    ensureTurn = false;
+                    if (Player.checkWin(p1)) return false;
+                }
             }
         }
         return true;
