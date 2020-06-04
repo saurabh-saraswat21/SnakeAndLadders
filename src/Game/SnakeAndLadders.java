@@ -59,6 +59,17 @@ public class SnakeAndLadders {
         return Input.takeOneDigitIntInput();
     }
 
+    public static void responseAtMenu(int number) {
+        if (number == 1) {
+            start();
+        } else if (number == 2) {
+            System.out.println("Not done yet");
+        } else if (number == 0) {
+        } else {
+            System.out.println("Invalid input");
+        }
+    }
+
     private static ArrayList<Player> getPlayers() {
         System.out.println("Enter The Number Of Players:-");
         int noOfPlayers = Input.inputNoOfPlayers();
