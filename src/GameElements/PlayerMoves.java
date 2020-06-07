@@ -28,7 +28,8 @@ public class PlayerMoves {
 
     private static void riseLadder(Player p1) {
         Ladder ladder = p1.getCurrentPosition().getLadder();
-        p1.setCurrentPosition(ladder.getHead());
+        p1.setCurrentPosition(ladder.getTop());
+        System.out.println("Wohooo! you rose a ladder from " + ladder.getDown() + " to " + ladder.getTop());
     }
 
     private static void biteSnake(Player p1) {
