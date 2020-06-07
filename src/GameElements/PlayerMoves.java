@@ -35,6 +35,7 @@ public class PlayerMoves {
     private static void biteSnake(Player p1) {
         Snake snake = p1.getCurrentPosition().getSnake();
         p1.setCurrentPosition(snake.getTail());
+        System.out.println("opps biten by a snake from " + snake.getHead() + " to " + snake.getTail());
     }
 
     private static void justMove(Player player, int number) {
