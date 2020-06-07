@@ -43,6 +43,7 @@ public class SnakeAndLadders {
                 response = Input.takeOneDigitIntInput();
                 if (response == 1) {
                     int diceResult = dice.rollDice();
+                    System.out.println(p1.getName() + " currrent is " + p1.getCurrentPosition().getValue());
                     System.out.println("Number comes :- " + diceResult);
                     int number = diceResult + p1.getCurrentPosition().getValue();
                     Player.move(p1, number);
