@@ -39,9 +39,9 @@ public class Board {
                 if (board.get(i).compare(LadderArr[j][0], board.get(i)) == 0) {
                     board.get(i).setSnake(false);
                     board.get(i).setLadder(true);
-                    Number head = board.get(LadderArr[j][0]);
-                    Number tail = board.get(LadderArr[j][1]);
-                    board.get(i).setLadder(new Ladder(head, tail));
+                    Number down = board.get(LadderArr[j][0]);
+                    Number top = board.get(LadderArr[j][1]);
+                    board.get(i).setLadder(new Ladder(top, down));
                 }
             }
         }
@@ -68,7 +68,7 @@ public class Board {
             if (board.get(i).isLadder()) {
                 k++;
                 System.out.println("Ladder " + k);
-                System.out.println(board.get(i).getLadder().getHead() + " " + board.get(i).getLadder().getTail());
+                System.out.println(board.get(i).getLadder().getTop() + " " + board.get(i).getLadder().getDown());
             }
 
         }
