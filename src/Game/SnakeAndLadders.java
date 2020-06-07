@@ -80,6 +80,7 @@ public class SnakeAndLadders {
         } else if (number == 2) {
             System.out.println("Not done yet");
         } else if (number == 0) {
+            System.exit(0);
         } else {
             System.out.println("Invalid input");
         }
