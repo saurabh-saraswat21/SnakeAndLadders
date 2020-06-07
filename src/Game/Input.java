@@ -10,7 +10,7 @@ public class Input {
             String a = scanner.nextLine();
             try {
                 int re = Integer.parseInt(a);
-                if (re < 10 && re > 0) {
+                if (re < 10 && re >= 0) {
                     return Integer.parseInt(a);
                 } else
                     System.out.println("Invalid input");
